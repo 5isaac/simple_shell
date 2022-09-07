@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 #ifndef _SHELL_H_
 #define _SHELL_H_
+=======
+#ifndef SHELL_H
+#define SHELL_H
+
+#define DELIM " \n"
+>>>>>>> 7cf8fe3884363a3aaf4064a8c4f8a14af1fc34b4
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+<<<<<<< HEAD
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -231,5 +239,36 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
+=======
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <string.h>
+#include <signal.h>
+
+extern char **environ;
+void signal_to_handel(int sig);
+int builtins(char **input, char *buff, int exit);
+char *concatation(char *tmp, char **input, char *token);
+int execute(char **input, char *buff, char *fpathbuff);
+char *fpath(char **input, char *PATH, char *c);
+int _environ(void);
+int _strcmp(char *s1, char *s2);
+char *_getenv(const char *member);
+char *_memset(char *s, char c, unsigned int bytes);
+char **make_token(char *buff);
+int path_members(char *s);
+int p_prompt(void);
+void _puts(char *s);
+char *readline(void);
+int number_str(char *s);
+char *_strdup(char *s);
+int _strlen(const char *s);
+char *_strcat(char *dest, char *src);
+int _strcmp_path(const char *PATH, const char *environ);
+int _cd(char **input);
+>>>>>>> 7cf8fe3884363a3aaf4064a8c4f8a14af1fc34b4
 
 #endif
